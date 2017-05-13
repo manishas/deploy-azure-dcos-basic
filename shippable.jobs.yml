@@ -1,10 +1,5 @@
 jobs:
 
-  - name: deploy-azure-basic_runCI
-    type: runCI
-    steps:
-      - OUT: deploy-azure-basic-img
-
   - name: azure-dcos-manifest
     type: manifest
     steps:
