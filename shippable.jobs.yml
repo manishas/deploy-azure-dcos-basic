@@ -1,0 +1,24 @@
+jobs:
+
+  - name: deploy-kubernetes-basic_runCI
+    type: runCI
+    steps:
+      - OUT: deploy-azure-basic-img
+
+  - name: azure-dcos-manifest
+    type: manifest
+    steps:
+      - IN: deploy-azure-basic-img
+      - IN: deploy-azure-basic-img-options
+    flags:
+      - deploy-azure-basic
+
+  - name: azure-dcos-deploy
+    type: deploy
+    steps:
+      - IN: azure-dcos-manifest
+      - IN: deploy-azure-basic-dcos
+      - TASK: managed
+        deployMethod: upgrade
+    flags:
+      - deploy-azure-basic
