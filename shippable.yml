@@ -16,7 +16,7 @@ env:
     - TESTS_LOC_DIR=$SHIPPABLE_REPO_DIR/tests
     - MOD_LOC=$SHIPPABLE_REPO_DIR/node_modules/.bin/
     - DOCKER_REPO=deploy-azure-dcos-basic
-    - DOCKER_ACC=jatindogra # {account name}
+    - DOCKER_ACC=devopsrecipes # {account name}
 
 build:
 
