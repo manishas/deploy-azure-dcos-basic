@@ -1,6 +1,6 @@
 jobs:
 
-  - name: deploy-kubernetes-basic_runCI
+  - name: deploy-azure-basic_runCI
     type: runCI
     steps:
       - OUT: deploy-azure-basic-img
