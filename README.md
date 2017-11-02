@@ -28,7 +28,7 @@ This repository demonstrates the following :
 * Select the Pipelines tab.
 * Select the "+" icon in the upper right.
 * Select the source control repo where your fork is. This will render all the jobs in the Single pane of glass (SPOG).
-* Run the pipeline following instructions [here](http://docs.shippable.com/validate/configuration/#migrating-pipeline-resources-from-one-repository-to-anotheryou-might-want-to-migrate-specific-resources,-jobs-or-triggers-from-one-repository-to-another-without-any-downtime.-similarly,-you-might-have-more-than-one-repository-for-your-ci-cd-pipeline-and-may-want-to-consolidate-both-into-one-repository-without-losing-the-history.).
+* Run the pipeline following instructions [here](http://docs.shippable.com/validate/configuration/#seedPipeline).
 
 ## CI Console Output
 ![CI Console Output](https://github.com/devops-recipes/deploy-azure-dcos-basic/raw/master/public/resources/images/console.png)
