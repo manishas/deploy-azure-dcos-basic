@@ -21,14 +21,14 @@ This repository demonstrates the following :
 * Change the DOCKER_REPO and DOCKER_ACC to point to your repo and docker account.
 * Next, follow these [CI Setup Instructions](http://docs.shippable.com/ci/runFirstBuild/) to enable your forked project for CI.
 * Build your CI project by clicking on the build button. Once the build completes, the NodeJS docker image will be pushed to your DockerHub account.
-* Create the Azure integration using instructions provided [here]().
+* Create the Azure integration using instructions provided [here](http://docs.shippable.com/platform/management/integrations/#adding-an-account-integration).
 
 ## Add the pipeline  in Shippable
 * Sign in with your shippable account, select your subscription from the dropdown menu in upper left (three horizontal lines).
 * Select the Pipelines tab.
 * Select the "+" icon in the upper right.
 * Select the source control repo where your fork is. This will render all the jobs in the Single pane of glass (SPOG).
-* Run the pipeline following instructions [here]().
+* Run the pipeline following instructions [here](http://docs.shippable.com/validate/configuration/#seedPipeline).
 
 ## CI Console Output
 ![CI Console Output](https://github.com/devops-recipes/deploy-azure-dcos-basic/raw/master/public/resources/images/console.png)
