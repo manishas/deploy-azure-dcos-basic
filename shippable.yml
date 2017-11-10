@@ -45,3 +45,57 @@ integrations:
   hub:
     - integrationName: dr-dockerhub
       type: dockerRegistryLogin
+
+
+resources:
+
+  - name: deploy-azure-basic-img
+    type: image
+    integration: dr-dockerhub    #replace with your Docker Hub integration name
+    pointer:
+      sourceName: "docker.io/devopsrecipes/deploy-azure-dcos-basic"  #replace with your image name on Docker Hub
+      isPull: false
+    seed:
+      versionName: "master.1"  #replace with your image tag on Docker Hub
+
+  - name: deploy-azure-basic-img-options
+    type: dockerOptions
+    version:
+      memory: 32
+      cpuShares: 1
+    flags:
+      - deploy-azure-basic
+
+  - name: deploy-azure-basic-replicas
+    type: replicas
+    version:
+      count: 2
+    flags:
+      - deploy-azure-basic
+
+#azure cluster
+  - name: deploy-azure-basic-dcos
+    type: cluster
+    integration: dr-azure-cluster    #replace with your azure dc/os integration name
+    flags:
+      - deploy-azure-basic
+
+
+jobs:
+
+  - name: azure-dcos-manifest
+    type: manifest
+    steps:
+      - IN: deploy-azure-basic-img
+      - IN: deploy-azure-basic-img-options
+    flags:
+      - deploy-azure-basic
+
+  - name: azure-dcos-deploy
+    type: deploy
+    method: upgrade
+    steps:
+      - IN: azure-dcos-manifest
+      - IN: deploy-azure-basic-dcos
+    flags:
+      - deploy-azure-basic
